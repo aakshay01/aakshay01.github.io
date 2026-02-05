@@ -484,160 +484,176 @@ section {
 
 /* Prediction Markets Section */
 .pm-section {
-    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    background: #f7f7f8;
 }
 
 .pm-layout {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 550px 1fr;
     gap: 3rem;
     align-items: start;
 }
 
-/* Event Card */
-.pm-event-card {
+/* Polymarket-style Card */
+.poly-card {
     background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 100px;
-}
-
-.pm-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.pm-tag {
-    font-size: 0.85rem;
-    color: var(--text-light);
-}
-
-.pm-vol {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.1);
-    padding: 0.35rem 0.75rem;
-    border-radius: 20px;
-}
-
-.pm-event-card h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 1.4;
-    margin-bottom: 1.5rem;
-    color: var(--text);
-}
-
-.pm-prob {
-    margin-bottom: 1.5rem;
-}
-
-.pm-prob-bar {
-    height: 10px;
-    background: #e2e8f0;
-    border-radius: 5px;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    margin-bottom: 0.5rem;
 }
 
-.pm-prob-fill {
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(90deg, #10b981, #3b82f6);
-    border-radius: 5px;
-}
-
-.pm-prob-text {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #10b981;
-}
-
-.pm-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.poly-header {
+    display: flex;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.pm-btn-yes, .pm-btn-no {
-    padding: 1rem;
+.poly-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 12px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.pm-btn-yes:hover, .pm-btn-no:hover {
-    transform: translateY(-2px);
-}
-
-.pm-btn-yes {
-    background: rgba(16, 185, 129, 0.1);
-    border: 2px solid #10b981;
-}
-
-.pm-btn-no {
-    background: rgba(239, 68, 68, 0.1);
-    border: 2px solid #ef4444;
-}
-
-.pm-btn-yes span { color: #10b981; font-size: 0.85rem; }
-.pm-btn-no span { color: #ef4444; font-size: 0.85rem; }
-
-.pm-btn-yes strong { color: #10b981; font-size: 1.5rem; display: block; margin-top: 0.25rem; }
-.pm-btn-no strong { color: #ef4444; font-size: 1.5rem; display: block; margin-top: 0.25rem; }
-
-.pm-formula {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    padding: 1rem;
-    background: var(--bg-alt);
-    border-radius: 12px;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
-.pm-formula-item {
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+.poly-category {
+    font-size: 0.8rem;
+    color: #666;
+    display: block;
+    margin-bottom: 0.15rem;
+}
+
+.poly-title h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+/* Outcome Rows */
+.poly-outcomes {
+    padding: 0.5rem 0;
+}
+
+.poly-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.15s ease;
+}
+
+.poly-row:last-child {
+    border-bottom: none;
+}
+
+.poly-row:hover {
+    background: #fafafa;
+}
+
+.poly-team {
+    display: flex;
+    flex-direction: column;
+}
+
+.poly-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1a1a1a;
+}
+
+.poly-vol {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.poly-percent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.poly-pct {
+    font-size: 1.5rem;
     font-weight: 700;
-    font-size: 0.95rem;
+    color: #1a1a1a;
 }
 
-.pm-formula-item.yes {
+.poly-change {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.poly-change.up {
+    color: #10b981;
+}
+
+.poly-change.down {
+    color: #ef4444;
+}
+
+.poly-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.poly-yes, .poly-no {
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.poly-yes {
+    background: #e6f7ef;
+    color: #10b981;
+}
+
+.poly-yes:hover {
     background: #10b981;
     color: white;
 }
 
-.pm-formula-item.no {
+.poly-yes strong {
+    font-weight: 700;
+}
+
+.poly-no {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+.poly-no:hover {
     background: #ef4444;
     color: white;
 }
 
-.pm-formula-item.total {
-    background: var(--primary);
-    color: white;
+.poly-no strong {
+    font-weight: 700;
 }
 
-.pm-formula-plus, .pm-formula-equals {
-    color: var(--text-light);
-    font-weight: 600;
-}
-
-.pm-card-note {
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin: 0;
+.poly-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: #fafafa;
+    font-size: 0.8rem;
+    color: #666;
 }
 
 /* Explanation Cards */
@@ -705,24 +721,30 @@ section {
 }
 
 /* Mobile */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .pm-layout {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
-    .pm-event-card {
-        position: static;
-    }
 }
 
-@media (max-width: 500px) {
-    .pm-buttons {
+@media (max-width: 600px) {
+    .poly-row {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
     
-    .pm-formula {
-        flex-wrap: wrap;
+    .poly-percent {
+        justify-content: flex-start;
+    }
+    
+    .poly-actions {
+        width: 100%;
+    }
+    
+    .poly-yes, .poly-no {
+        flex: 1;
+        justify-content: center;
     }
 }
 
