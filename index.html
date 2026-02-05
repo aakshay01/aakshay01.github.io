@@ -87,76 +87,43 @@
         </div>
         
         <div class="pm-layout">
-            <!-- Left: Polymarket-style Event Card -->
+            <!-- Left: Event Card - Binary Question -->
             <div class="poly-card">
                 <div class="poly-header">
                     <div class="poly-icon">🏏</div>
                     <div class="poly-title">
                         <span class="poly-category">Sports • Cricket</span>
-                        <h3>T20 World Cup 2026 Winner</h3>
+                        <h3>Will India win the 2026 T20 World Cup?</h3>
                     </div>
                 </div>
                 
-                <!-- Outcome Rows -->
-                <div class="poly-outcomes">
-                    <div class="poly-row">
-                        <div class="poly-team">
-                            <span class="poly-name">India</span>
-                            <span class="poly-vol">₹4.5L Vol.</span>
-                        </div>
-                        <div class="poly-percent">
-                            <span class="poly-pct">60%</span>
-                            <span class="poly-change up">↑12%</span>
-                        </div>
-                        <div class="poly-actions">
-                            <button class="poly-yes">Buy Yes <strong>₹6</strong></button>
-                            <button class="poly-no">Buy No <strong>₹4</strong></button>
-                        </div>
+                <div class="poly-binary">
+                    <div class="poly-prob-display">
+                        <span class="poly-prob-pct">60%</span>
+                        <span class="poly-prob-label">chance</span>
                     </div>
                     
-                    <div class="poly-row">
-                        <div class="poly-team">
-                            <span class="poly-name">Australia</span>
-                            <span class="poly-vol">₹3.8L Vol.</span>
-                        </div>
-                        <div class="poly-percent">
-                            <span class="poly-pct">22%</span>
-                            <span class="poly-change down">↓3%</span>
-                        </div>
-                        <div class="poly-actions">
-                            <button class="poly-yes">Buy Yes <strong>₹2.2</strong></button>
-                            <button class="poly-no">Buy No <strong>₹7.8</strong></button>
-                        </div>
+                    <div class="poly-prob-bar">
+                        <div class="poly-prob-fill"></div>
                     </div>
                     
-                    <div class="poly-row">
-                        <div class="poly-team">
-                            <span class="poly-name">England</span>
-                            <span class="poly-vol">₹2.1L Vol.</span>
-                        </div>
-                        <div class="poly-percent">
-                            <span class="poly-pct">10%</span>
-                            <span class="poly-change down">↓5%</span>
-                        </div>
-                        <div class="poly-actions">
-                            <button class="poly-yes">Buy Yes <strong>₹1</strong></button>
-                            <button class="poly-no">Buy No <strong>₹9</strong></button>
-                        </div>
+                    <div class="poly-binary-buttons">
+                        <button class="poly-yes-big">
+                            <span>Buy Yes</span>
+                            <strong>₹6</strong>
+                        </button>
+                        <button class="poly-no-big">
+                            <span>Buy No</span>
+                            <strong>₹4</strong>
+                        </button>
                     </div>
                     
-                    <div class="poly-row">
-                        <div class="poly-team">
-                            <span class="poly-name">West Indies</span>
-                            <span class="poly-vol">₹1.2L Vol.</span>
-                        </div>
-                        <div class="poly-percent">
-                            <span class="poly-pct">8%</span>
-                            <span class="poly-change">—</span>
-                        </div>
-                        <div class="poly-actions">
-                            <button class="poly-yes">Buy Yes <strong>₹0.8</strong></button>
-                            <button class="poly-no">Buy No <strong>₹9.2</strong></button>
-                        </div>
+                    <div class="poly-formula">
+                        <span class="poly-f-yes">YES ₹6</span>
+                        <span class="poly-f-plus">+</span>
+                        <span class="poly-f-no">NO ₹4</span>
+                        <span class="poly-f-eq">=</span>
+                        <span class="poly-f-total">₹10 Contract</span>
                     </div>
                 </div>
                 
@@ -173,7 +140,7 @@
                         <span class="pm-explain-num">1</span>
                         <h4>₹10 Contract</h4>
                     </div>
-                    <p>Each contract settles at ₹10. Buy India YES at ₹6 → If India wins, you get ₹10 (profit ₹4). If not, you lose ₹6.</p>
+                    <p>Each contract settles at ₹10. Buy YES at ₹6 → If India wins, you get ₹10 (profit ₹4). If not, you lose ₹6.</p>
                 </div>
                 
                 <div class="pm-explain-card">
@@ -191,14 +158,17 @@
                     </div>
                     <p>Bought at ₹6, price rises to ₹8? Sell and lock in ₹2 profit per contract — no need to wait for the event!</p>
                 </div>
-                
-                <div class="pm-explain-card highlight">
-                    <div class="pm-explain-header">
-                        <span class="pm-explain-icon">💡</span>
-                        <h4>Price = Probability</h4>
-                    </div>
-                    <p>₹6 price means 60% implied probability. Prices update in real-time as traders buy and sell based on new information.</p>
+            </div>
+        </div>
+        
+        <!-- Full-width insight card -->
+        <div class="pm-insight-full">
+            <div class="pm-explain-card highlight">
+                <div class="pm-explain-header">
+                    <span class="pm-explain-icon">💡</span>
+                    <h4>Price = Probability</h4>
                 </div>
+                <p>₹6 price means 60% implied probability. Prices update in real-time as traders buy and sell based on new information. The market aggregates the collective wisdom of all participants.</p>
             </div>
         </div>
     </section>
