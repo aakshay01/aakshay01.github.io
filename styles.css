@@ -482,6 +482,322 @@ section {
     letter-spacing: 1px;
 }
 
+/* Prediction Markets Section */
+.prediction-section {
+    background: var(--bg);
+}
+
+.prediction-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.prediction-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.lead-text {
+    font-size: 1.35rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.concept-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.concept-card {
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.concept-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.concept-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+.concept-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.orderbook-section {
+    background: var(--bg-alt);
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.orderbook-section > h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.orderbook-intro {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.orderbook-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.orderbook {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.orderbook-side {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.orderbook-header {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.orderbook-yes .orderbook-header {
+    color: #10b981;
+}
+
+.orderbook-no .orderbook-header {
+    color: #ef4444;
+}
+
+.orderbook-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.order-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.order-row.header-row {
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    background: none;
+}
+
+.orderbook-yes .order-row:not(.header-row) {
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.15) var(--depth, 50%), transparent var(--depth, 50%));
+}
+
+.orderbook-no .order-row:not(.header-row) {
+    background: linear-gradient(270deg, rgba(239, 68, 68, 0.15) var(--depth, 50%), transparent var(--depth, 50%));
+}
+
+.order-row .price {
+    font-weight: 600;
+}
+
+.orderbook-yes .price {
+    color: #10b981;
+}
+
+.orderbook-no .price {
+    color: #ef4444;
+}
+
+.orderbook-mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.current-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.price-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+.spread {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--bg-alt);
+    border-radius: 20px;
+}
+
+.trade-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-name {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+.example-trade, .exit-example {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.example-trade h4, .exit-example h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.trade-flow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.trade-step {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.25rem;
+    background: var(--bg-alt);
+    border-radius: 10px;
+    position: relative;
+}
+
+.step-num {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.trade-step p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.trade-arrow {
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.exit-example p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.exit-note {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Mobile styles for prediction section */
+@media (max-width: 768px) {
+    .orderbook {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .orderbook-mid {
+        order: -1;
+        padding: 1rem;
+    }
+    
+    .trade-flow {
+        flex-direction: column;
+    }
+    
+    .trade-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .trade-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .orderbook-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .lead-text {
+        font-size: 1.15rem;
+    }
+}
+
 /* Work Section */
 .work-category {
     margin-bottom: 4rem;
@@ -689,22 +1005,26 @@ section {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 6rem;
-        padding-bottom: 3rem;
+        padding: 6rem 8% 4rem;
         min-height: auto;
     }
 
     .hero-name {
         font-size: 2.5rem;
+        line-height: 1.1;
+        margin-bottom: 0.75rem;
     }
 
     .hero-title {
         font-size: 1.5rem;
+        margin-bottom: 2rem;
     }
 
     .hero-description {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+        padding: 0 1rem;
     }
 
     .hero-visual {
@@ -714,11 +1034,17 @@ section {
     .hero-cta {
         justify-content: center;
         flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .btn {
+        padding: 1rem 2.5rem;
+        min-width: 160px;
     }
 
     .about-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .about-text {
@@ -728,6 +1054,9 @@ section {
 
     .about-text p {
         text-align: center;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
     }
 
     .about-stats {
@@ -740,10 +1069,15 @@ section {
     .stat {
         min-width: 140px;
         flex: 1;
+        padding: 1.5rem 1rem;
     }
 
     .nav-links {
         gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
     }
 
     .contact-links {
@@ -751,7 +1085,16 @@ section {
         align-items: center;
     }
 
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
     section {
-        padding: 3rem 5%;
+        padding: 4rem 8% 3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
