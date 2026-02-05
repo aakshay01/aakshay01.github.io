@@ -3,31 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - Akshay Kadam</title>
+    <title>SKU Optimization - Akshay Kadam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .coming-soon {
-            min-height: 100vh;
+        .project-hero {
+            min-height: 60vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 6rem 5%;
         }
-        .coming-soon h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .coming-soon p { color: var(--text-light); margin-bottom: 2rem; }
+        .project-hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .project-hero .subtitle { font-size: 1.5rem; opacity: 0.9; margin-bottom: 2rem; }
+        .project-meta { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+        .meta-item { background: rgba(255,255,255,0.2); padding: 0.5rem 1.5rem; border-radius: 30px; }
+        .project-content { max-width: 900px; margin: 0 auto; padding: 4rem 5%; }
+        .project-content h2 { font-size: 2rem; margin: 3rem 0 1.5rem; color: var(--primary); }
+        .project-content p, .project-content li { font-size: 1.125rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; }
+        .project-content ul { padding-left: 1.5rem; }
+        .project-content li { margin-bottom: 0.75rem; }
+        .highlight-box { background: var(--bg-alt); border-left: 4px solid #fa709a; padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 500; margin-bottom: 2rem; }
+        .back-link:hover { text-decoration: underline; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .result-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
+        .result-card .number { font-size: 2.5rem; font-weight: 700; color: #fa709a; }
+        .result-card .label { font-size: 0.9rem; color: var(--text-light); }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="nav-brand">AK</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
     </nav>
-    <div class="coming-soon">
-        <h1>🚧 Coming Soon</h1>
-        <p>This case study is being prepared. Check back soon!</p>
-        <a href="index.html" class="btn btn-primary">← Back to Portfolio</a>
-    </div>
+
+    <section class="project-hero">
+        <div>
+            <h1>📈 SKU Optimization</h1>
+            <p class="subtitle">Multi-League Expansion & Liquidity Consolidation</p>
+            <div class="project-meta">
+                <span class="meta-item">Probo</span>
+                <span class="meta-item">2021 - 2025</span>
+                <span class="meta-item">Product Lead</span>
+            </div>
+        </div>
+    </section>
+
+    <article class="project-content">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <h2>Overview</h2>
+        <p>
+            SKU Optimization was about strategically expanding event coverage while consolidating 
+            liquidity where it mattered. For Cricket, we pushed multiple league questions and 
+            optimized based on traction. For categories like Football and Basketball, we 
+            consolidated liquidity into "hero questions" to ensure deep markets.
+        </p>
+
+        <div class="highlight-box">
+            <strong>The Strategy:</strong> Expand breadth in high-demand categories (Cricket), 
+            consolidate depth in emerging categories (Football, Basketball) — maximize liquidity 
+            utilization across the platform.
+        </div>
+
+        <h2>My Role</h2>
+        <ul>
+            <li>Analyzed traction data across leagues and question types</li>
+            <li>Defined SKU expansion strategy for Cricket (IPL, international, domestic leagues)</li>
+            <li>Identified hero questions for liquidity consolidation</li>
+            <li>Built feedback loops to optimize based on trading volume</li>
+            <li>Coordinated with ops on event creation priorities</li>
+        </ul>
+
+        <h2>Approach</h2>
+        <ul>
+            <li><strong>Cricket Expansion:</strong> Multiple leagues, multiple question types — 
+            chase the traction, scale what works</li>
+            <li><strong>Hero Questions:</strong> For Football/Basketball, identify the single 
+            best question per match and consolidate all liquidity there</li>
+            <li><strong>Data-Driven:</strong> Continuous optimization based on volume, spread, 
+            and user engagement metrics</li>
+            <li><strong>Seasonal Adjustments:</strong> Ramp up/down based on league calendars</li>
+        </ul>
+
+        <h2>Results</h2>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="number">1000x</div>
+                <div class="label">Platform Growth</div>
+            </div>
+            <div class="result-card">
+                <div class="number">↑</div>
+                <div class="label">Liquidity Depth</div>
+            </div>
+            <div class="result-card">
+                <div class="number">Multi</div>
+                <div class="label">League Coverage</div>
+            </div>
+        </div>
+
+        <h2>Learnings</h2>
+        <p>
+            SKU optimization taught me that more isn't always better. Spreading liquidity thin 
+            across many questions hurts everyone. The hero question strategy for emerging 
+            categories created better trading experiences than fragmented markets. Data-driven 
+            iteration was key — what worked in IPL didn't work in La Liga.
+        </p>
+
+        <a href="index.html#work" class="btn btn-primary" style="margin-top: 2rem;">View More Projects</a>
+    </article>
+
+    <footer class="footer">
+        <p>© 2026 Akshay Kadam. Built with ❤️</p>
+    </footer>
 </body>
 </html>
