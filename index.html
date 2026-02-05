@@ -80,173 +80,84 @@
         </div>
     </section>
 
-    <section id="prediction-markets" class="prediction-section">
+    <section id="prediction-markets" class="pm-section">
         <div class="section-header">
             <h2>Understanding Prediction Markets</h2>
             <div class="section-line"></div>
         </div>
         
-        <div class="pm-container">
-            <!-- Main Event Card - Polymarket Style -->
-            <div class="pm-main-card">
-                <div class="pm-event-card">
-                    <div class="pm-event-header">
-                        <span class="pm-category">🏏 Sports</span>
-                        <span class="pm-volume">₹24.5L volume</span>
+        <div class="pm-layout">
+            <!-- Left: Event Card -->
+            <div class="pm-event-card">
+                <div class="pm-card-header">
+                    <span class="pm-tag">🏏 Sports</span>
+                    <span class="pm-vol">₹24.5L traded</span>
+                </div>
+                
+                <h3>Will India win the 2026 T20 World Cup?</h3>
+                
+                <div class="pm-prob">
+                    <div class="pm-prob-bar">
+                        <div class="pm-prob-fill"></div>
                     </div>
-                    <h3 class="pm-event-title">Will India win the 2026 T20 World Cup?</h3>
-                    
-                    <div class="pm-probability-bar">
-                        <div class="pm-prob-fill" style="width: 60%"></div>
+                    <span class="pm-prob-text">60% chance</span>
+                </div>
+                
+                <div class="pm-buttons">
+                    <div class="pm-btn-yes">
+                        <span>Buy YES</span>
+                        <strong>₹6.00</strong>
                     </div>
-                    <div class="pm-prob-labels">
-                        <span>0%</span>
-                        <span class="pm-current-prob">60%</span>
-                        <span>100%</span>
-                    </div>
-                    
-                    <div class="pm-trade-buttons">
-                        <button class="pm-btn pm-yes">
-                            <span class="pm-btn-label">Yes</span>
-                            <span class="pm-btn-price">₹6.00</span>
-                        </button>
-                        <button class="pm-btn pm-no">
-                            <span class="pm-btn-label">No</span>
-                            <span class="pm-btn-price">₹4.00</span>
-                        </button>
-                    </div>
-                    
-                    <div class="pm-event-footer">
-                        <span>🕐 Ends: Oct 2026</span>
-                        <span>👥 580 traders</span>
+                    <div class="pm-btn-no">
+                        <span>Buy NO</span>
+                        <strong>₹4.00</strong>
                     </div>
                 </div>
                 
-                <!-- Explanation Panel -->
-                <div class="pm-explanation">
-                    <div class="pm-explain-item">
-                        <div class="pm-explain-icon">💰</div>
-                        <div class="pm-explain-content">
-                            <h4>₹10 Contract</h4>
-                            <p>Winners receive ₹10 per contract. Buy Yes at ₹6? You profit ₹4 if correct.</p>
-                        </div>
-                    </div>
-                    <div class="pm-explain-item">
-                        <div class="pm-explain-icon">⚖️</div>
-                        <div class="pm-explain-content">
-                            <h4>Peer-to-Peer</h4>
-                            <p>Your Yes at ₹6 matches someone's No at ₹4. No house — just traders.</p>
-                        </div>
-                    </div>
-                    <div class="pm-explain-item">
-                        <div class="pm-explain-icon">📈</div>
-                        <div class="pm-explain-content">
-                            <h4>Exit Anytime</h4>
-                            <p>Price moved to ₹8? Sell your position and lock in profits early.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Order Book Visual -->
-            <div class="pm-orderbook-card">
-                <div class="pm-ob-header">
-                    <h4>Order Book</h4>
-                    <span class="pm-ob-spread">Spread: ₹0.20</span>
+                <div class="pm-formula">
+                    <div class="pm-formula-item yes">YES ₹6</div>
+                    <div class="pm-formula-plus">+</div>
+                    <div class="pm-formula-item no">NO ₹4</div>
+                    <div class="pm-formula-equals">=</div>
+                    <div class="pm-formula-item total">₹10</div>
                 </div>
                 
-                <div class="pm-ob-body">
-                    <div class="pm-ob-side pm-ob-yes">
-                        <div class="pm-ob-title">YES Bids</div>
-                        <div class="pm-ob-row" data-depth="95"><span>₹6.00</span><span>2,450</span></div>
-                        <div class="pm-ob-row" data-depth="70"><span>₹5.80</span><span>1,820</span></div>
-                        <div class="pm-ob-row" data-depth="55"><span>₹5.50</span><span>3,100</span></div>
-                        <div class="pm-ob-row" data-depth="35"><span>₹5.20</span><span>1,200</span></div>
-                    </div>
-                    
-                    <div class="pm-ob-divider">
-                        <div class="pm-ob-match">
-                            <span class="pm-match-price">₹6 + ₹4 = ₹10</span>
-                            <span class="pm-match-label">✓ Matched</span>
-                        </div>
-                    </div>
-                    
-                    <div class="pm-ob-side pm-ob-no">
-                        <div class="pm-ob-title">NO Bids</div>
-                        <div class="pm-ob-row" data-depth="90"><span>₹4.00</span><span>1,980</span></div>
-                        <div class="pm-ob-row" data-depth="75"><span>₹4.20</span><span>2,340</span></div>
-                        <div class="pm-ob-row" data-depth="50"><span>₹4.50</span><span>1,560</span></div>
-                        <div class="pm-ob-row" data-depth="30"><span>₹4.80</span><span>890</span></div>
-                    </div>
-                </div>
+                <p class="pm-card-note">Contract value is ₹10. Winner takes all.</p>
             </div>
             
-            <!-- Trade Example Flow -->
-            <div class="pm-flow-card">
-                <h4>How a Trade Works</h4>
-                <div class="pm-flow">
-                    <div class="pm-flow-step">
-                        <div class="pm-avatar pm-avatar-1">R</div>
-                        <div class="pm-flow-info">
-                            <strong>Rahul buys YES</strong>
-                            <span>100 qty × ₹6 = ₹600</span>
-                        </div>
+            <!-- Right: Explanation -->
+            <div class="pm-explain">
+                <div class="pm-explain-card">
+                    <div class="pm-explain-header">
+                        <span class="pm-explain-num">1</span>
+                        <h4>Not Against the House</h4>
                     </div>
-                    
-                    <div class="pm-flow-connector">
-                        <div class="pm-flow-line"></div>
-                        <div class="pm-flow-badge">Match!</div>
-                        <div class="pm-flow-line"></div>
-                    </div>
-                    
-                    <div class="pm-flow-step">
-                        <div class="pm-avatar pm-avatar-2">P</div>
-                        <div class="pm-flow-info">
-                            <strong>Priya buys NO</strong>
-                            <span>100 qty × ₹4 = ₹400</span>
-                        </div>
-                    </div>
+                    <p>Unlike betting apps, you're not playing against a bookmaker. Traders trade against <strong>each other</strong>. Platform just matches orders.</p>
                 </div>
                 
-                <div class="pm-outcomes">
-                    <div class="pm-outcome pm-outcome-yes">
-                        <div class="pm-outcome-header">🏆 If YES wins</div>
-                        <div class="pm-outcome-detail">Rahul gets <strong>₹1,000</strong></div>
-                        <div class="pm-outcome-profit">+₹400 profit</div>
+                <div class="pm-explain-card">
+                    <div class="pm-explain-header">
+                        <span class="pm-explain-num">2</span>
+                        <h4>How Matching Works</h4>
                     </div>
-                    <div class="pm-outcome pm-outcome-no">
-                        <div class="pm-outcome-header">❌ If NO wins</div>
-                        <div class="pm-outcome-detail">Priya gets <strong>₹1,000</strong></div>
-                        <div class="pm-outcome-profit">+₹600 profit</div>
-                    </div>
+                    <p>Rahul buys <strong>YES at ₹6</strong>. Priya buys <strong>NO at ₹4</strong>. Together = ₹10 contract. If India wins, Rahul gets ₹10. If not, Priya gets ₹10.</p>
                 </div>
-            </div>
-            
-            <!-- Exit Option -->
-            <div class="pm-exit-card">
-                <div class="pm-exit-header">
-                    <span class="pm-exit-icon">🚪</span>
-                    <h4>The Exit Option</h4>
+                
+                <div class="pm-explain-card">
+                    <div class="pm-explain-header">
+                        <span class="pm-explain-num">3</span>
+                        <h4>Exit Anytime</h4>
+                    </div>
+                    <p>Bought YES at ₹6. Price rises to ₹8 after good news. <strong>Sell now for ₹200 profit</strong> — no need to wait for the match!</p>
                 </div>
-                <div class="pm-exit-scenario">
-                    <div class="pm-exit-before">
-                        <span class="pm-exit-label">Bought at</span>
-                        <span class="pm-exit-value">₹6.00</span>
+                
+                <div class="pm-explain-card highlight">
+                    <div class="pm-explain-header">
+                        <span class="pm-explain-icon">💡</span>
+                        <h4>Key Insight</h4>
                     </div>
-                    <div class="pm-exit-arrow">
-                        <span>Price rises</span>
-                        →
-                    </div>
-                    <div class="pm-exit-after">
-                        <span class="pm-exit-label">Now at</span>
-                        <span class="pm-exit-value highlight">₹8.00</span>
-                    </div>
-                    <div class="pm-exit-result">
-                        <span class="pm-exit-label">Sell & profit</span>
-                        <span class="pm-exit-value profit">+₹200</span>
-                    </div>
+                    <p>Price = Probability. ₹6 YES means market thinks 60% chance of winning. Prices update in real-time as traders buy/sell.</p>
                 </div>
-                <p class="pm-exit-note">Unlike betting, you can trade out anytime — no need to wait for the event.</p>
             </div>
         </div>
     </section>
