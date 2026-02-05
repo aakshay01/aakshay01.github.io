@@ -491,9 +491,9 @@ section {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 550px 1fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
 }
 
 /* Polymarket-style Card */
@@ -503,6 +503,8 @@ section {
     padding: 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .poly-header {
@@ -659,6 +661,10 @@ section {
 /* Binary Question Style */
 .poly-binary {
     padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .poly-prob-display {
@@ -820,14 +826,18 @@ section {
 .pm-explain {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
 .pm-explain-card {
     background: white;
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 1.5rem 1.75rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .pm-explain-card.highlight {
@@ -843,7 +853,7 @@ section {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .pm-explain-num {
@@ -857,6 +867,7 @@ section {
     justify-content: center;
     font-weight: 700;
     font-size: 0.85rem;
+    flex-shrink: 0;
 }
 
 .pm-explain-card.highlight .pm-explain-num {
@@ -876,7 +887,7 @@ section {
 .pm-explain-card p {
     font-size: 0.95rem;
     color: var(--text-light);
-    line-height: 1.7;
+    line-height: 1.6;
     margin: 0;
 }
 
