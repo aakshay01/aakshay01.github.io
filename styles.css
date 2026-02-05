@@ -84,6 +84,13 @@ a {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto !important;
+        padding: 5rem 5% 2rem !important;
+    }
+}
+
 .hero-content {
     max-width: 600px;
     z-index: 1;
