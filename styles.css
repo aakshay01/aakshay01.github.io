@@ -126,6 +126,21 @@ a {
     line-height: 1.8;
 }
 
+.highlight-link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.highlight-link:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
 .hero-cta {
     display: flex;
     gap: 1rem;
