@@ -955,6 +955,40 @@ section {
     margin: 0 auto;
 }
 
+/* Mobile horizontal swipe */
+@media (max-width: 768px) {
+    .projects-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        margin: 0 -5%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .projects-grid::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .projects-grid::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+    
+    .projects-grid::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 3px;
+    }
+    
+    .projects-grid .project-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+}
+
 .project-card {
     background: white;
     border-radius: 16px;
