@@ -3,31 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - Akshay Kadam</title>
+    <title>Liquidity Desk - Akshay Kadam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJSZMHL8BF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJSZMHL8BF');
+    </script>
     <style>
-        .coming-soon {
-            min-height: 100vh;
+        .project-hero {
+            min-height: 60vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 6rem 5%;
         }
-        .coming-soon h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .coming-soon p { color: var(--text-light); margin-bottom: 2rem; }
+        .project-hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .project-hero .subtitle { font-size: 1.5rem; opacity: 0.9; margin-bottom: 2rem; }
+        .project-meta { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+        .meta-item { background: rgba(255,255,255,0.2); padding: 0.5rem 1.5rem; border-radius: 30px; }
+        .project-content { max-width: 900px; margin: 0 auto; padding: 4rem 5%; }
+        .project-content h2 { font-size: 2rem; margin: 3rem 0 1.5rem; color: var(--primary); }
+        .project-content p, .project-content li { font-size: 1.125rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; }
+        .project-content ul { padding-left: 1.5rem; }
+        .project-content li { margin-bottom: 0.75rem; }
+        .highlight-box { background: var(--bg-alt); border-left: 4px solid #4facfe; padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 500; margin-bottom: 2rem; }
+        .back-link:hover { text-decoration: underline; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .result-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
+        .result-card .number { font-size: 2.5rem; font-weight: 700; color: #4facfe; }
+        .result-card .label { font-size: 0.9rem; color: var(--text-light); }
+        .problem-box { background: #fff5f5; border-left: 4px solid #e53e3e; padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .solution-box { background: #f0fff4; border-left: 4px solid #38a169; padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="nav-brand">AK</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
     </nav>
-    <div class="coming-soon">
-        <h1>🚧 Coming Soon</h1>
-        <p>This case study is being prepared. Check back soon!</p>
-        <a href="index.html" class="btn btn-primary">← Back to Portfolio</a>
-    </div>
+
+    <section class="project-hero">
+        <div>
+            <h1>💧 Liquidity Desk</h1>
+            <p class="subtitle">Solving Low-Liquidity Market Manipulation</p>
+            <div class="project-meta">
+                <span class="meta-item">Vision 11</span>
+                <span class="meta-item">2025</span>
+                <span class="meta-item">Product Strategy</span>
+            </div>
+        </div>
+    </section>
+
+    <article class="project-content">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <h2>The Problem</h2>
+        <div class="problem-box">
+            <strong>Low liquidity events were hurting new users.</strong> In sports categories 
+            with thin order books, power users could easily manipulate prices — buying up 
+            liquidity and moving markets to their advantage. New users entering these markets 
+            faced unfair pricing, leading to poor first-trade experiences and high drop-off rates.
+        </div>
+        
+        <p>
+            This was particularly acute in non-cricket sports like Football, where trading 
+            volume was lower but user interest was growing. The result: new users would make 
+            their first trade at manipulated prices, lose, and never return.
+        </p>
+
+        <h2>The Solution</h2>
+        <div class="solution-box">
+            <strong>Liquidity Desk:</strong> An internal system that scraped real-time odds 
+            from established betting markets, converted them to the ₹10 yes/no contract format, 
+            and provided internal liquidity at fair market prices.
+        </div>
+
+        <h2>How It Worked</h2>
+        <ul>
+            <li><strong>Odds Scraping:</strong> Real-time odds from major betting markets served as the source of truth for fair pricing</li>
+            <li><strong>Price Conversion:</strong> Betting odds converted to ₹10 yes/no format (e.g., 2.5 odds → ₹4 YES / ₹6 NO)</li>
+            <li><strong>Internal Market Making:</strong> Team provided liquidity at converted prices, ensuring new users always had fair prices to trade against</li>
+            <li><strong>Dynamic Updates:</strong> Prices updated in real-time as betting market odds shifted</li>
+        </ul>
+
+        <h2>My Role</h2>
+        <ul>
+            <li>Identified the new user drop-off problem through funnel analysis</li>
+            <li>Designed the liquidity desk workflow and pricing models</li>
+            <li>Coordinated odds scraping infrastructure setup</li>
+            <li>Built monitoring dashboards for liquidity coverage</li>
+            <li>Trained ops team on market-making operations</li>
+        </ul>
+
+        <h2>Results</h2>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="number">+5%</div>
+                <div class="label">New User Retention (Post 1st Trade)</div>
+            </div>
+            <div class="result-card">
+                <div class="number">+10%</div>
+                <div class="label">Match Rate Improvement</div>
+            </div>
+            <div class="result-card">
+                <div class="number">35→45%</div>
+                <div class="label">Football Match Rate</div>
+            </div>
+        </div>
+
+        <h2>Learnings</h2>
+        <p>
+            The Liquidity Desk taught me that market health directly impacts user experience. 
+            In prediction markets, liquidity isn't just a trading metric — it's a trust signal. 
+            Users who get fair prices on their first trade are far more likely to return. 
+            Sometimes the best product solution isn't a feature, it's infrastructure that users 
+            never see but always feel.
+        </p>
+
+        <div class="highlight-box">
+            <strong>Key Insight:</strong> New user retention in trading platforms isn't just 
+            about UX — it's about ensuring their first trade happens at a fair price. 
+            Liquidity is a product problem, not just an ops problem.
+        </div>
+
+        <a href="index.html#work" class="btn btn-primary" style="margin-top: 2rem;">View More Projects</a>
+    </article>
+
+    <footer class="footer">
+        <p>© 2026 Akshay Kadam. Built with ❤️</p>
+    </footer>
 </body>
 </html>
