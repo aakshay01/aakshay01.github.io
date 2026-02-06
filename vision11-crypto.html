@@ -3,31 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - Akshay Kadam</title>
+    <title>Crypto Charts Integration - Akshay Kadam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJSZMHL8BF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJSZMHL8BF');
+    </script>
     <style>
-        .coming-soon {
-            min-height: 100vh;
+        .project-hero {
+            min-height: 60vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #1a1a2e;
             text-align: center;
-            padding: 2rem;
+            padding: 6rem 5%;
         }
-        .coming-soon h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .coming-soon p { color: var(--text-light); margin-bottom: 2rem; }
+        .project-hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .project-hero .subtitle { font-size: 1.5rem; opacity: 0.8; margin-bottom: 2rem; }
+        .project-meta { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+        .meta-item { background: rgba(0,0,0,0.1); padding: 0.5rem 1.5rem; border-radius: 30px; }
+        .project-content { max-width: 900px; margin: 0 auto; padding: 4rem 5%; }
+        .project-content h2 { font-size: 2rem; margin: 3rem 0 1.5rem; color: var(--primary); }
+        .project-content p, .project-content li { font-size: 1.125rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; }
+        .project-content ul { padding-left: 1.5rem; }
+        .project-content li { margin-bottom: 0.75rem; }
+        .highlight-box { background: var(--bg-alt); border-left: 4px solid #fcb69f; padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 500; margin-bottom: 2rem; }
+        .back-link:hover { text-decoration: underline; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .result-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
+        .result-card .number { font-size: 2.5rem; font-weight: 700; color: #f6ad55; }
+        .result-card .label { font-size: 0.9rem; color: var(--text-light); }
+        .problem-box { background: #fff5f5; border-left: 4px solid #e53e3e; padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .solution-box { background: #f0fff4; border-left: 4px solid #38a169; padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="nav-brand">AK</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
     </nav>
-    <div class="coming-soon">
-        <h1>🚧 Coming Soon</h1>
-        <p>This case study is being prepared. Check back soon!</p>
-        <a href="index.html" class="btn btn-primary">← Back to Portfolio</a>
-    </div>
+
+    <section class="project-hero">
+        <div>
+            <h1>₿ Crypto Charts Integration</h1>
+            <p class="subtitle">Live Charts for Better Trading Decisions</p>
+            <div class="project-meta">
+                <span class="meta-item">Vision 11</span>
+                <span class="meta-item">2025</span>
+                <span class="meta-item">Product Strategy</span>
+            </div>
+        </div>
+    </section>
+
+    <article class="project-content">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <h2>The Problem</h2>
+        <div class="problem-box">
+            <strong>Multi-screen trading friction.</strong> Users trading on crypto prediction 
+            events had to constantly switch between the platform and external charting tools 
+            (TradingView, Binance) to make informed decisions. This context-switching hurt 
+            engagement and made the trading experience feel fragmented.
+        </div>
+        
+        <p>
+            Crypto traders rely heavily on technical analysis — candlestick patterns, support/resistance 
+            levels, volume indicators. Without charts in-app, users were forced to juggle multiple 
+            screens, reducing their time on platform and making the experience feel incomplete 
+            compared to dedicated trading apps.
+        </p>
+
+        <h2>The Solution</h2>
+        <div class="solution-box">
+            <strong>Native chart integration:</strong> Embedded live crypto charts directly 
+            into the prediction event pages using Binance and TradingView APIs. Users could 
+            now analyze price action and place trades in a single view.
+        </div>
+
+        <h2>Implementation</h2>
+        <ul>
+            <li><strong>Binance API:</strong> Real-time price data and candlestick feeds for accurate, low-latency charts</li>
+            <li><strong>TradingView Widgets:</strong> Professional-grade charting with indicators, drawing tools, and timeframe controls</li>
+            <li><strong>Contextual Placement:</strong> Charts embedded directly on event pages, above the trading interface</li>
+            <li><strong>Mobile Optimization:</strong> Responsive charts that worked seamlessly on mobile devices</li>
+        </ul>
+
+        <h2>My Role</h2>
+        <ul>
+            <li>Identified engagement gap through user session analysis</li>
+            <li>Evaluated charting solutions (native build vs. API integration)</li>
+            <li>Defined integration requirements and UX placement</li>
+            <li>Coordinated API integration with engineering</li>
+            <li>Monitored engagement metrics post-launch</li>
+        </ul>
+
+        <h2>Results</h2>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="number">+20%</div>
+                <div class="label">Avg Time Spent (Crypto Users)</div>
+            </div>
+            <div class="result-card">
+                <div class="number">1</div>
+                <div class="label">Single Screen Experience</div>
+            </div>
+            <div class="result-card">
+                <div class="number">Live</div>
+                <div class="label">Real-time Data</div>
+            </div>
+        </div>
+
+        <h2>Learnings</h2>
+        <p>
+            This project reinforced that reducing friction often matters more than adding features. 
+            Users didn't need more prediction events — they needed better context for the ones 
+            they were already trading. By bringing external tools in-house, we made the platform 
+            feel more complete and professional.
+        </p>
+
+        <div class="highlight-box">
+            <strong>Key Insight:</strong> Engagement isn't just about content — it's about 
+            removing reasons to leave. Every tab switch is a potential drop-off. Integrate 
+            the tools your users are already using elsewhere.
+        </div>
+
+        <a href="index.html#work" class="btn btn-primary" style="margin-top: 2rem;">View More Projects</a>
+    </article>
+
+    <footer class="footer">
+        <p>© 2026 Akshay Kadam. Built with ❤️</p>
+    </footer>
 </body>
 </html>
