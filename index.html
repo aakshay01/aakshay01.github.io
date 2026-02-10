@@ -45,22 +45,29 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="analytics-cards">
-                <div class="analytics-card">
-                    <span class="analytics-icon">👀</span>
-                    <span class="analytics-value" id="ga-views">--</span>
-                    <span class="analytics-label">Page Views</span>
+            <div class="analytics-section">
+                <div class="analytics-header">
+                    <span class="analytics-badge">📊 Live Stats</span>
+                    <span class="analytics-subtitle">Yes, I track everything.</span>
                 </div>
-                <div class="analytics-card">
-                    <span class="analytics-icon">👥</span>
-                    <span class="analytics-value" id="ga-visitors">--</span>
-                    <span class="analytics-label">Visitors</span>
+                <div class="analytics-cards">
+                    <div class="analytics-card">
+                        <span class="analytics-icon">👀</span>
+                        <span class="analytics-value" id="ga-views">--</span>
+                        <span class="analytics-label">Page Views</span>
+                    </div>
+                    <div class="analytics-card">
+                        <span class="analytics-icon">👥</span>
+                        <span class="analytics-value" id="ga-visitors">--</span>
+                        <span class="analytics-label">Visitors</span>
+                    </div>
+                    <div class="analytics-card">
+                        <span class="analytics-icon">⏱️</span>
+                        <span class="analytics-value" id="ga-time">--</span>
+                        <span class="analytics-label">Avg. Time</span>
+                    </div>
                 </div>
-                <div class="analytics-card">
-                    <span class="analytics-icon">⏱️</span>
-                    <span class="analytics-value" id="ga-time">--</span>
-                    <span class="analytics-label">Avg. Time</span>
-                </div>
+                <span class="analytics-footer">Last 30 days • Updates live</span>
             </div>
         </div>
     </header>
@@ -411,23 +418,50 @@
             }
         });
 
-        // Fetch Google Analytics data
+        // Fetch Google Analytics data with caching
         const GA_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRGbBk7XON-sQoHo4KKc70YnngyTBl2REqtIuQAKEwVvwrc5VoSDoe7nK_DRdX8PFSDg/exec';
+        const CACHE_KEY = 'ga_analytics_cache';
+        const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in ms
+        
+        function updateUI(data) {
+            document.getElementById('ga-views').textContent = formatNumber(data.pageViews || 0);
+            document.getElementById('ga-visitors').textContent = formatNumber(data.visitors || 0);
+            document.getElementById('ga-time').textContent = formatTime(data.avgSessionDuration || 0);
+        }
         
         async function fetchAnalytics() {
+            // Try to load from cache first (instant display)
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                const { data, timestamp } = JSON.parse(cached);
+                updateUI(data);
+                
+                // If cache is still fresh, don't fetch
+                if (Date.now() - timestamp < CACHE_DURATION) {
+                    return;
+                }
+            }
+            
+            // Fetch fresh data
             try {
                 const response = await fetch(GA_SCRIPT_URL);
                 const data = await response.json();
                 
-                document.getElementById('ga-views').textContent = formatNumber(data.pageViews || 0);
-                document.getElementById('ga-visitors').textContent = formatNumber(data.visitors || 0);
-                document.getElementById('ga-time').textContent = formatTime(data.avgSessionDuration || 0);
+                // Update UI
+                updateUI(data);
+                
+                // Save to cache
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    data: data,
+                    timestamp: Date.now()
+                }));
             } catch (error) {
                 console.log('Analytics fetch failed:', error);
-                // Show fallback values
-                document.getElementById('ga-views').textContent = '—';
-                document.getElementById('ga-visitors').textContent = '—';
-                document.getElementById('ga-time').textContent = '—';
+                if (!cached) {
+                    document.getElementById('ga-views').textContent = '—';
+                    document.getElementById('ga-visitors').textContent = '—';
+                    document.getElementById('ga-time').textContent = '—';
+                }
             }
         }
         
@@ -444,9 +478,7 @@
         }
         
         // Fetch on page load
-        if (GA_SCRIPT_URL !== 'GA_APPS_SCRIPT_URL_HERE') {
-            fetchAnalytics();
-        }
+        fetchAnalytics();
     </script>
 </body>
 </html>
