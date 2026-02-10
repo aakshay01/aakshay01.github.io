@@ -186,115 +186,94 @@ a {
     transform: translateY(-2px);
 }
 
-/* Analytics Section */
+/* Analytics Widget - Terminal Style */
 .hero-visual {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 1rem;
+    padding-top: 2rem;
 }
 
-.analytics-section {
+.analytics-widget {
+    background: #1a1a2e;
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 260px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.widget-header {
+    background: #16162a;
+    padding: 0.75rem 1rem;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.analytics-header {
-    margin-bottom: 1rem;
+.widget-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5f57;
 }
 
-.analytics-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+.widget-dot:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.widget-dot:nth-child(3) {
+    background: #28ca41;
+}
+
+.widget-title {
+    margin-left: 0.75rem;
+    font-size: 0.75rem;
+    color: #888;
     letter-spacing: 0.02em;
 }
 
-.analytics-subtitle {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 0.85rem;
-    color: var(--text-light);
-    font-style: italic;
+.widget-body {
+    padding: 1.25rem 1.5rem;
 }
 
-.analytics-cards {
+.stat-row {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.analytics-card {
-    background: white;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    min-width: 220px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0.4rem 0;
 }
 
-.analytics-card:hover {
-    transform: translateX(4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+.stat-row.muted {
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #2a2a4a;
 }
 
-.analytics-icon {
-    font-size: 1.25rem;
+.stat-key {
+    color: #7c7cff;
+    font-size: 0.85rem;
 }
 
-.analytics-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    min-width: 50px;
+.stat-row.muted .stat-key {
+    color: #555;
+    font-size: 0.75rem;
 }
 
-.analytics-label {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    font-weight: 500;
-}
-
-.analytics-footer {
-    margin-top: 0.75rem;
-    font-size: 0.7rem;
-    color: var(--text-light);
-    opacity: 0.7;
+.stat-val {
+    color: #4ade80;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
     .hero-visual {
         padding-top: 2rem;
-    }
-    
-    .analytics-section {
-        align-items: center;
-    }
-    
-    .analytics-cards {
-        flex-direction: row;
-        flex-wrap: wrap;
         justify-content: center;
     }
     
-    .analytics-card {
-        padding: 0.75rem 1rem;
-        min-width: auto;
-        flex-direction: column;
-        text-align: center;
-        gap: 0.25rem;
-    }
-    
-    .analytics-value {
-        font-size: 1.25rem;
+    .analytics-widget {
+        min-width: 240px;
     }
 }
 
