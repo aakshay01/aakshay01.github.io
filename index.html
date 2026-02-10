@@ -45,9 +45,23 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="floating-card card-1">📈 1000x Growth</div>
-            <div class="floating-card card-2">🤖 AI Products</div>
-            <div class="floating-card card-3">🎯 User Engagement</div>
+            <div class="analytics-cards">
+                <div class="analytics-card">
+                    <span class="analytics-icon">👀</span>
+                    <span class="analytics-value" id="ga-views">--</span>
+                    <span class="analytics-label">Page Views</span>
+                </div>
+                <div class="analytics-card">
+                    <span class="analytics-icon">👥</span>
+                    <span class="analytics-value" id="ga-visitors">--</span>
+                    <span class="analytics-label">Visitors</span>
+                </div>
+                <div class="analytics-card">
+                    <span class="analytics-icon">⏱️</span>
+                    <span class="analytics-value" id="ga-time">--</span>
+                    <span class="analytics-label">Avg. Time</span>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -396,6 +410,43 @@
                 navbar.style.boxShadow = 'none';
             }
         });
+
+        // Fetch Google Analytics data
+        const GA_SCRIPT_URL = 'GA_APPS_SCRIPT_URL_HERE';
+        
+        async function fetchAnalytics() {
+            try {
+                const response = await fetch(GA_SCRIPT_URL);
+                const data = await response.json();
+                
+                document.getElementById('ga-views').textContent = formatNumber(data.pageViews || 0);
+                document.getElementById('ga-visitors').textContent = formatNumber(data.visitors || 0);
+                document.getElementById('ga-time').textContent = formatTime(data.avgSessionDuration || 0);
+            } catch (error) {
+                console.log('Analytics fetch failed:', error);
+                // Show fallback values
+                document.getElementById('ga-views').textContent = '—';
+                document.getElementById('ga-visitors').textContent = '—';
+                document.getElementById('ga-time').textContent = '—';
+            }
+        }
+        
+        function formatNumber(num) {
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
+            return num.toString();
+        }
+        
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            if (mins > 0) return mins + 'm ' + secs + 's';
+            return secs + 's';
+        }
+        
+        // Fetch on page load
+        if (GA_SCRIPT_URL !== 'GA_APPS_SCRIPT_URL_HERE') {
+            fetchAnalytics();
+        }
     </script>
 </body>
 </html>
