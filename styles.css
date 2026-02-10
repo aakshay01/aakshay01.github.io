@@ -242,6 +242,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 0.4rem 0;
+    gap: 2rem;
 }
 
 .stat-row.muted {
@@ -264,6 +265,8 @@ a {
     color: #4ade80;
     font-size: 1rem;
     font-weight: 600;
+    min-width: 50px;
+    text-align: right;
 }
 
 @media (max-width: 768px) {
