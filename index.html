@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
     <title>Akshay Kadam - Product Generalist Portfolio</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJSZMHL8BF"></script>
@@ -421,6 +424,7 @@
 
         // Fetch Google Analytics data with caching
         const GA_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRGbBk7XON-sQoHo4KKc70YnngyTBl2REqtIuQAKEwVvwrc5VoSDoe7nK_DRdX8PFSDg/exec';
+        const GA_API_KEY = '964e93f86d4b87780551afaf2527046c';
         const CACHE_KEY = 'ga_analytics_cache';
         const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in ms
         
@@ -445,7 +449,7 @@
             
             // Fetch fresh data
             try {
-                const response = await fetch(GA_SCRIPT_URL);
+                const response = await fetch(GA_SCRIPT_URL + '?key=' + GA_API_KEY);
                 const data = await response.json();
                 
                 // Update UI
