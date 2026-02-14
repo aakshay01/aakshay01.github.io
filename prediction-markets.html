@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .project-hero {
-            min-height: 60vh;
+            min-height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -20,25 +20,13 @@
             padding: 6rem 5%;
         }
         .project-hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
         .project-hero .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             opacity: 0.9;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-        .project-meta {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .meta-item {
-            background: rgba(255,255,255,0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
+            max-width: 500px;
         }
         .project-content {
             max-width: 900px;
@@ -46,21 +34,24 @@
             padding: 4rem 5%;
         }
         .project-content h2 {
-            font-size: 2rem;
+            font-size: 1.75rem;
             margin: 3rem 0 1.5rem;
-            color: var(--primary);
+            color: var(--text);
+        }
+        .project-content h2:first-of-type {
+            margin-top: 0;
         }
         .project-content p, .project-content li {
-            font-size: 1.125rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-light);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
         .project-content ul {
             padding-left: 1.5rem;
         }
         .project-content li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
         .highlight-box {
             background: var(--bg-alt);
@@ -68,14 +59,6 @@
             padding: 1.5rem 2rem;
             margin: 2rem 0;
             border-radius: 0 12px 12px 0;
-        }
-        .highlight-box.dark {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-left: none;
-            color: white;
-        }
-        .highlight-box.dark strong {
-            color: white;
         }
         .back-link {
             display: inline-flex;
@@ -88,30 +71,153 @@
         .back-link:hover {
             text-decoration: underline;
         }
-        .results-grid {
+        
+        /* Event Card Demo */
+        .demo-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0 3rem;
+            align-items: start;
         }
-        .result-card {
-            text-align: center;
-            padding: 1rem 0;
+        @media (max-width: 768px) {
+            .demo-section {
+                grid-template-columns: 1fr;
+            }
         }
-        .result-card .number {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        .event-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 1.5rem;
         }
-        .result-card .label {
+        .event-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .event-icon {
+            width: 44px;
+            height: 44px;
+            background: #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        .event-cat {
+            font-size: 0.7rem;
+            color: #868e96;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .event-q {
             font-size: 1rem;
+            font-weight: 600;
             color: var(--text);
-            font-weight: 500;
+            margin-top: 0.2rem;
         }
+        .event-prob {
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        .prob-num {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .prob-label {
+            font-size: 1rem;
+            color: #868e96;
+        }
+        .prob-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        .prob-fill {
+            height: 100%;
+            width: 60%;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        .event-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .btn-yes, .btn-no {
+            padding: 0.75rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .btn-yes {
+            background: #40c057;
+            color: white;
+        }
+        .btn-no {
+            background: #fa5252;
+            color: white;
+        }
+        .btn-price {
+            display: block;
+            font-size: 1.25rem;
+            margin-top: 0.25rem;
+        }
+        .event-formula {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #868e96;
+            background: white;
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+        .f-yes { color: #40c057; font-weight: 600; }
+        .f-no { color: #fa5252; font-weight: 600; }
+        .f-total { font-weight: 700; color: var(--text); }
+        
+        .explain-list {
+            list-style: none;
+            padding: 0;
+        }
+        .explain-list li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        .explain-num {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .explain-text strong {
+            display: block;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+        .explain-text span {
+            font-size: 0.95rem;
+        }
+        
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
             margin: 2rem 0;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
         .comparison-table th, .comparison-table td {
             padding: 1rem 0;
@@ -142,64 +248,81 @@
     <section class="project-hero">
         <div>
             <h1>📈 Prediction Markets</h1>
-            <p class="subtitle">How peer-to-peer trading turns opinions into probabilities—and why I spent 3+ years building them</p>
-            <div class="project-meta">
-                <span class="meta-item">Probo & Vision 11</span>
-                <span class="meta-item">2021-2025</span>
-                <span class="meta-item">Product Owner</span>
-            </div>
+            <p class="subtitle">How peer-to-peer trading turns opinions into probabilities</p>
         </div>
     </section>
 
     <article class="project-content">
         <a href="index.html" class="back-link">← Back to Portfolio</a>
 
-        <h2>What Are Prediction Markets?</h2>
-        <p>
-            Prediction markets let you trade on the outcomes of future events. Instead of betting against 
-            a bookmaker, you trade directly with other people. The price of a contract reflects the 
-            crowd's probability estimate for that outcome.
-        </p>
-
-        <div class="highlight-box">
-            <strong>Example:</strong> "Will Google have the best AI model by February?" trades at ₹6. 
-            That means the market thinks there's a 60% chance. Buy YES at ₹6 → if it happens, you get ₹10 
-            (profit ₹4). If not, you lose your ₹6.
-        </div>
-
         <h2>How It Works</h2>
-        <ul>
-            <li><strong>₹10 Contract:</strong> Every contract settles at ₹10 if true, ₹0 if false</li>
-            <li><strong>Peer-to-Peer:</strong> Your YES ₹6 matches someone's NO ₹4 — no bookmaker takes a cut</li>
-            <li><strong>Exit Anytime:</strong> Price rises to ₹8? Sell and lock in ₹2 profit without waiting</li>
-            <li><strong>Price = Probability:</strong> ₹6 price means 60% implied probability</li>
-        </ul>
-
-        <div class="highlight-box dark">
-            <strong>💡 Key Insight:</strong> Prices update in real-time as traders react to news. 
-            The market aggregates collective intelligence into a single number.
+        
+        <div class="demo-section">
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-icon">🤖</div>
+                    <div>
+                        <div class="event-cat">Tech • AI</div>
+                        <div class="event-q">Will Google have the best AI model by end of February?</div>
+                    </div>
+                </div>
+                <div class="event-prob">
+                    <span class="prob-num">60%</span>
+                    <span class="prob-label">chance</span>
+                    <div class="prob-bar"><div class="prob-fill"></div></div>
+                </div>
+                <div class="event-buttons">
+                    <div class="btn-yes">Buy Yes<span class="btn-price">₹6</span></div>
+                    <div class="btn-no">Buy No<span class="btn-price">₹4</span></div>
+                </div>
+                <div class="event-formula">
+                    <span class="f-yes">YES ₹6</span> + <span class="f-no">NO ₹4</span> = <span class="f-total">₹10 Contract</span>
+                </div>
+            </div>
+            
+            <ul class="explain-list">
+                <li>
+                    <span class="explain-num">1</span>
+                    <div class="explain-text">
+                        <strong>₹10 Contract</strong>
+                        <span>Each contract settles at ₹10 if true, ₹0 if false. Buy YES at ₹6 → win ₹10 (profit ₹4) or lose ₹6.</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="explain-num">2</span>
+                    <div class="explain-text">
+                        <strong>Peer-to-Peer</strong>
+                        <span>Your YES ₹6 matches someone's NO ₹4. No bookmaker—traders trade against each other.</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="explain-num">3</span>
+                    <div class="explain-text">
+                        <strong>Exit Anytime</strong>
+                        <span>Price rises to ₹8? Sell and lock in ₹2 profit—no need to wait for the event.</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="explain-num">4</span>
+                    <div class="explain-text">
+                        <strong>Price = Probability</strong>
+                        <span>₹6 price means 60% implied probability. Prices update in real-time as news breaks.</span>
+                    </div>
+                </li>
+            </ul>
         </div>
 
-        <h2>Why They Matter</h2>
-        <div class="results-grid">
-            <div class="result-card">
-                <div class="number">🎯</div>
-                <div class="label">More Accurate Than Polls</div>
-            </div>
-            <div class="result-card">
-                <div class="number">⚡</div>
-                <div class="label">Real-Time Updates</div>
-            </div>
-            <div class="result-card">
-                <div class="number">💰</div>
-                <div class="label">Skin in the Game</div>
-            </div>
-        </div>
+        <h2>Why Prediction Markets Matter</h2>
         <p>
-            Studies show prediction markets outperform polls and expert forecasts. Why? Traders have 
-            money on the line—they're incentivized to be right, not just sound right. Bad predictions 
-            cost money, which filters out noise and rewards genuine insight.
+            Prediction markets aggregate dispersed information into a single number—the price. Unlike polls 
+            or expert opinions, traders have "skin in the game." They're incentivized to be right, not just 
+            sound right.
         </p>
+        <ul>
+            <li><strong>More Accurate:</strong> Studies show they outperform polls and expert forecasts</li>
+            <li><strong>Real-Time:</strong> Prices update instantly as news breaks</li>
+            <li><strong>Self-Correcting:</strong> Bad predictions cost money, filtering out noise</li>
+        </ul>
 
         <h2>PM vs Traditional Betting</h2>
         <table class="comparison-table">
@@ -220,45 +343,31 @@
             </tr>
             <tr>
                 <td>Exit</td>
-                <td>Usually can't sell back</td>
+                <td>Usually can't sell</td>
                 <td>Trade anytime</td>
             </tr>
             <tr>
                 <td>House Edge</td>
-                <td>5-15% built into odds</td>
+                <td>5-15%</td>
                 <td>Small fee only</td>
             </tr>
             <tr>
                 <td>Topics</td>
                 <td>Sports, casino</td>
-                <td>Anything: politics, tech, economics</td>
+                <td>Anything</td>
             </tr>
         </table>
 
-        <h2>What I Built</h2>
-        <p>
-            At <strong>Probo</strong>, I spent 3+ years building prediction market products:
-        </p>
-        <ul>
-            <li><strong>₹.Ai (Rai):</strong> Social P2P betting with friends on custom events</li>
-            <li><strong>Clubs:</strong> Event sharing platform — 50K visitors, 10K traders</li>
-            <li><strong>Fantasy Arena:</strong> Multi-question pools with multipliers</li>
-            <li><strong>Creators:</strong> User-generated events platform</li>
-        </ul>
-        <p>
-            At <strong>Vision 11</strong>, I set up liquidity desk operations and integrated 
-            live data feeds (Binance, TradingView) for crypto prediction markets.
-        </p>
-
         <h2>The Future</h2>
+        <p>Prediction markets are still early. We're seeing growth in:</p>
         <ul>
             <li><strong>Corporate forecasting:</strong> Companies using internal PMs for decisions</li>
-            <li><strong>News dashboards:</strong> Real-time probability for elections, geopolitics</li>
-            <li><strong>DeFi integration:</strong> Blockchain-based markets with transparent settlement</li>
-            <li><strong>AI forecasting:</strong> LLMs as market participants at scale</li>
+            <li><strong>News dashboards:</strong> Real-time probabilities for elections, geopolitics</li>
+            <li><strong>DeFi:</strong> Blockchain-based markets with transparent settlement</li>
+            <li><strong>AI integration:</strong> LLMs as market participants at scale</li>
         </ul>
 
-        <a href="index.html#work" class="btn btn-primary" style="margin-top: 2rem;">View My Work</a>
+        <a href="index.html#work" class="btn btn-primary" style="margin-top: 2rem;">Back to Portfolio</a>
     </article>
 
     <footer class="footer">
