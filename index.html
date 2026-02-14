@@ -25,10 +25,20 @@
         <div class="nav-brand">AK</div>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#prediction-markets">Prediction Markets</a>
-            <a href="#work">Work</a>
+            <div class="nav-dropdown">
+                <a href="#work" class="nav-dropdown-trigger">Work ▾</a>
+                <div class="nav-dropdown-menu">
+                    <a href="#work-social">Social Products</a>
+                    <a href="#work-probo">Probo Core</a>
+                    <a href="#work-vision11">Vision 11</a>
+                    <a href="#work-ai">AI Projects</a>
+                </div>
+            </div>
+            <a href="#prediction-markets">PM Primer</a>
+            <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
         </div>
+        <div class="nav-mobile-toggle" onclick="toggleMobileNav()">☰</div>
     </nav>
 
     <header class="hero">
@@ -220,7 +230,7 @@
             <div class="section-line"></div>
         </div>
 
-        <div class="work-category">
+        <div class="work-category" id="work-social">
             <h3 class="category-title">👥 Social Products</h3>
             <div class="projects-grid">
                 <a href="probo-rai.html" class="project-card">
@@ -258,8 +268,8 @@
             </div>
         </div>
 
-        <div class="work-category">
-            <h3 class="category-title">🚀 Probo</h3>
+        <div class="work-category" id="work-probo">
+            <h3 class="category-title">🚀 Probo Core</h3>
             <div class="projects-grid">
                 <a href="probo-fantasy.html" class="project-card">
                     <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
@@ -296,7 +306,7 @@
             </div>
         </div>
 
-        <div class="work-category">
+        <div class="work-category" id="work-vision11">
             <h3 class="category-title">💼 Vision 11</h3>
             <div class="projects-grid">
                 <a href="vision11-liquidity.html" class="project-card">
@@ -318,6 +328,22 @@
                         <h4>Crypto Charts Integration</h4>
                         <p>Live Binance & TradingView API integration</p>
                         <span class="project-company">Vision 11</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="work-category" id="work-ai">
+            <h3 class="category-title">🤖 AI Projects</h3>
+            <div class="projects-grid">
+                <a href="openclaw-assistant.html" class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #232526 0%, #414345 100%);">
+                        <span class="project-icon">🦾</span>
+                    </div>
+                    <div class="project-info">
+                        <h4>OpenClaw Assistant</h4>
+                        <p>Personal agentic AI with memory, multi-platform messaging, and autonomous task execution</p>
+                        <span class="project-company">Personal Project</span>
                     </div>
                 </a>
             </div>

@@ -1334,3 +1334,348 @@ section {
         gap: 1.5rem;
     }
 }
+/* Navigation Dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-trigger {
+    cursor: pointer;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    padding: 0.5rem 0;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 100;
+    margin-top: 0.5rem;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: background 0.2s;
+}
+
+.nav-dropdown-menu a:hover {
+    background: var(--bg-alt);
+    color: var(--primary);
+}
+
+.nav-mobile-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-dropdown-menu {
+        position: fixed;
+        top: 60px;
+        left: 5%;
+        right: 5%;
+        transform: none;
+    }
+    
+    .nav-mobile-toggle {
+        display: block;
+    }
+}
+
+/* Case Study Page Styles */
+.case-study {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 8rem 5% 4rem;
+}
+
+.case-header {
+    margin-bottom: 3rem;
+}
+
+.case-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.case-meta span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    padding: 0.3rem 0.8rem;
+    background: var(--bg-alt);
+    border-radius: 4px;
+}
+
+.case-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.case-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.case-section {
+    margin-bottom: 3rem;
+}
+
+.case-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.case-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    background: var(--bg-alt);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.overview-item h4 {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.overview-item p {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.case-list {
+    list-style: none;
+    padding: 0;
+}
+
+.case-list li {
+    padding: 0.75rem 0 0.75rem 1.5rem;
+    position: relative;
+}
+
+.case-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+/* Architecture Diagram */
+.architecture-diagram {
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.arch-layer {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.arch-layer h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.arch-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.arch-item {
+    background: var(--bg-alt);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.arch-arrow {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    padding: 0.5rem 0;
+}
+
+/* Capability Grid */
+.capability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.capability-card {
+    background: var(--bg-alt);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.capability-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.cap-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.capability-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+.capability-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Use Cases */
+.use-case {
+    background: var(--bg-alt);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary);
+}
+
+.use-case h4 {
+    margin-bottom: 0.5rem;
+}
+
+.use-case p {
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.use-case-result {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.use-case-result span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+/* Tech Highlights */
+.tech-highlights {
+    display: grid;
+    gap: 1rem;
+}
+
+.tech-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-alt);
+    border-radius: 8px;
+}
+
+.tech-item code {
+    background: var(--text);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.tech-item p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Learnings */
+.learnings {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.learning-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.learning-num {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.learning-item h4 {
+    margin-bottom: 0.3rem;
+}
+
+.learning-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.case-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .case-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .case-study {
+        padding: 6rem 5% 2rem;
+    }
+    
+    .capability-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .learning-item {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}

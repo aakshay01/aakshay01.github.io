@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw AI Assistant - Akshay Kadam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">AK</a>
+        <div class="nav-links">
+            <a href="index.html#work">← Back to Work</a>
+        </div>
+    </nav>
+
+    <article class="case-study">
+        <header class="case-header">
+            <div class="case-meta">
+                <span class="case-company">Personal Project</span>
+                <span class="case-date">2026</span>
+            </div>
+            <h1>OpenClaw: Personal Agentic AI Assistant</h1>
+            <p class="case-subtitle">Building an autonomous AI assistant that handles messaging, research, coding, and task automation across multiple platforms</p>
+        </header>
+
+        <section class="case-section">
+            <h2>Overview</h2>
+            <div class="case-overview">
+                <div class="overview-item">
+                    <h4>Role</h4>
+                    <p>Builder & User</p>
+                </div>
+                <div class="overview-item">
+                    <h4>Duration</h4>
+                    <p>Ongoing (2026)</p>
+                </div>
+                <div class="overview-item">
+                    <h4>Stack</h4>
+                    <p>OpenClaw, Claude, Node.js</p>
+                </div>
+                <div class="overview-item">
+                    <h4>Platforms</h4>
+                    <p>WhatsApp, Telegram, Signal</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>The Challenge</h2>
+            <p>
+                Traditional AI assistants are stateless and limited to single-turn interactions. 
+                I wanted an AI that could:
+            </p>
+            <ul class="case-list">
+                <li>Maintain context and memory across sessions</li>
+                <li>Execute multi-step tasks autonomously</li>
+                <li>Integrate with my actual workflows (messaging, files, web)</li>
+                <li>Know when to act vs. when to ask for clarification</li>
+            </ul>
+        </section>
+
+        <section class="case-section">
+            <h2>Solution Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <h4>🔌 Input Channels</h4>
+                    <div class="arch-items">
+                        <span class="arch-item">WhatsApp</span>
+                        <span class="arch-item">Telegram</span>
+                        <span class="arch-item">Signal</span>
+                        <span class="arch-item">Web Chat</span>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <h4>🧠 OpenClaw Gateway</h4>
+                    <div class="arch-items">
+                        <span class="arch-item">Session Management</span>
+                        <span class="arch-item">Memory System</span>
+                        <span class="arch-item">Tool Orchestration</span>
+                        <span class="arch-item">Cron/Heartbeats</span>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <h4>🛠️ Tool Layer</h4>
+                    <div class="arch-items">
+                        <span class="arch-item">File System</span>
+                        <span class="arch-item">Web Search</span>
+                        <span class="arch-item">Browser Control</span>
+                        <span class="arch-item">Shell/Code Exec</span>
+                        <span class="arch-item">Calendar/Email</span>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <h4>🤖 AI Models</h4>
+                    <div class="arch-items">
+                        <span class="arch-item">Claude Sonnet (Primary)</span>
+                        <span class="arch-item">Claude Opus (Complex)</span>
+                        <span class="arch-item">Ollama Local (Fallback)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Key Capabilities</h2>
+            
+            <div class="capability-grid">
+                <div class="capability-card">
+                    <div class="cap-icon">🧠</div>
+                    <h4>Persistent Memory</h4>
+                    <p>Maintains context through MEMORY.md and daily logs. Remembers past decisions, preferences, and ongoing projects across sessions.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="cap-icon">🔧</div>
+                    <h4>Tool Use</h4>
+                    <p>Executes shell commands, reads/writes files, searches the web, controls browsers, and integrates with external APIs.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="cap-icon">📱</div>
+                    <h4>Multi-Platform</h4>
+                    <p>Responds across WhatsApp, Telegram, and Signal. Routes messages automatically based on the originating platform.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="cap-icon">⏰</div>
+                    <h4>Proactive Actions</h4>
+                    <p>Scheduled heartbeats for periodic checks, cron jobs for reminders, and autonomous task completion.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="cap-icon">🔄</div>
+                    <h4>Sub-Agent Spawning</h4>
+                    <p>Delegates complex tasks to background agents that work independently and report back when done.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="cap-icon">👤</div>
+                    <h4>Human-in-the-Loop</h4>
+                    <p>Knows when to ask for clarification vs. proceed. Requests permission for external actions (emails, public posts).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Real-World Use Cases</h2>
+            
+            <div class="use-case">
+                <h4>📊 Research Assistance</h4>
+                <p>Generated sample datasets and performed statistical analysis (chi-square tests, correlations) for a thesis researcher. Created Excel reports with multiple sheets including sociodemographic tables, cross-tabulations, and significance tests.</p>
+                <div class="use-case-result">
+                    <span>Output: Complete thesis analysis with 8 Excel sheets</span>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <h4>💻 Portfolio Development</h4>
+                <p>Built and iteratively improved this portfolio site. Added Google Analytics integration, real-time stats widget, case study pages, and navigation improvements—all through conversational prompts.</p>
+                <div class="use-case-result">
+                    <span>Output: Production portfolio with live analytics</span>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <h4>🔧 System Configuration</h4>
+                <p>Self-updates configuration, manages cron jobs, handles model fallbacks, and auto-restarts when config changes. Fixed its own context limit issues by patching the compaction settings.</p>
+                <div class="use-case-result">
+                    <span>Output: Self-maintaining system</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Technical Highlights</h2>
+            <div class="tech-highlights">
+                <div class="tech-item">
+                    <code>AGENTS.md</code>
+                    <p>Configuration file that defines the agent's personality, boundaries, and operating procedures</p>
+                </div>
+                <div class="tech-item">
+                    <code>MEMORY.md</code>
+                    <p>Long-term memory store for curated knowledge, updated through periodic reflection</p>
+                </div>
+                <div class="tech-item">
+                    <code>memory/*.md</code>
+                    <p>Daily logs capturing raw session context and decisions</p>
+                </div>
+                <div class="tech-item">
+                    <code>SOUL.md</code>
+                    <p>Personality and tone configuration—making the assistant genuinely helpful, not performatively so</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Key Learnings</h2>
+            <div class="learnings">
+                <div class="learning-item">
+                    <span class="learning-num">1</span>
+                    <div>
+                        <h4>Memory Design Matters</h4>
+                        <p>Separating long-term (MEMORY.md) from short-term (daily logs) creates a natural knowledge hierarchy. The agent learns to curate what's worth remembering.</p>
+                    </div>
+                </div>
+                <div class="learning-item">
+                    <span class="learning-num">2</span>
+                    <div>
+                        <h4>Boundaries Enable Trust</h4>
+                        <p>Clear rules about external actions (ask before sending emails) build confidence. The agent knows its limits.</p>
+                    </div>
+                </div>
+                <div class="learning-item">
+                    <span class="learning-num">3</span>
+                    <div>
+                        <h4>Multi-Model Fallbacks</h4>
+                        <p>Local LLMs (Ollama) as fallbacks ensure the system stays operational even when cloud APIs are unavailable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>What's Next</h2>
+            <ul class="case-list">
+                <li>Voice integration for hands-free interaction</li>
+                <li>More tool integrations (calendar, email, home automation)</li>
+                <li>Multi-agent workflows for complex research tasks</li>
+                <li>Fine-tuning memory retrieval with semantic search</li>
+            </ul>
+        </section>
+
+        <div class="case-footer">
+            <a href="index.html#work" class="btn btn-primary">← Back to All Projects</a>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>© 2026 Akshay Kadam. Built with ❤️</p>
+    </footer>
+</body>
+</html>
