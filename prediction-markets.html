@@ -132,44 +132,66 @@
             border: none;
             border-radius: 12px;
             font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.25rem;
             transition: transform 0.2s;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
         .poly-yes-big:hover, .poly-no-big:hover {
             transform: scale(1.02);
         }
         .poly-yes-big {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
+            background: #059669;
         }
         .poly-no-big {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-            color: white;
+            background: #dc2626;
         }
         .poly-yes-big strong, .poly-no-big strong {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
         .poly-formula {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            flex-wrap: wrap;
-        }
-        .poly-f-yes { color: #10b981; font-weight: 600; }
-        .poly-f-no { color: #ef4444; font-weight: 600; }
-        .poly-f-total { 
-            background: var(--bg-alt); 
-            padding: 0.25rem 0.75rem; 
-            border-radius: 4px;
-            font-weight: 600;
+            gap: 0.75rem;
+            font-size: 1rem;
             color: var(--text);
+            flex-wrap: wrap;
+            background: var(--bg-alt);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        .poly-f-yes { 
+            background: #059669;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .poly-f-no { 
+            background: #dc2626;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .poly-f-plus, .poly-f-eq {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        .poly-f-total { 
+            background: var(--text); 
+            color: white;
+            padding: 0.4rem 1rem; 
+            border-radius: 6px;
+            font-weight: 700;
         }
         .poly-footer {
             display: flex;
@@ -195,8 +217,14 @@
             border: 1px solid var(--border);
         }
         .pm-explain-card.highlight {
-            background: linear-gradient(135deg, rgba(102,126,234,0.08), rgba(118,75,162,0.08));
-            border: 1px solid rgba(102,126,234,0.25);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+        }
+        .pm-explain-card.highlight h4 {
+            color: white;
+        }
+        .pm-explain-card.highlight p {
+            color: rgba(255,255,255,0.9);
         }
         .pm-explain-header {
             display: flex;
