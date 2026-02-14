@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .project-hero {
-            min-height: 50vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -20,19 +20,62 @@
             padding: 6rem 5%;
         }
         .project-hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
         }
         .project-hero .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             opacity: 0.9;
+            margin-bottom: 2rem;
             max-width: 600px;
-            margin: 0 auto;
         }
-        .pm-content {
-            max-width: 1100px;
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+        }
+        .project-content {
+            max-width: 900px;
             margin: 0 auto;
             padding: 4rem 5%;
+        }
+        .project-content h2 {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--primary);
+        }
+        .project-content p, .project-content li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        .project-content ul {
+            padding-left: 1.5rem;
+        }
+        .project-content li {
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box {
+            background: var(--bg-alt);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+        .highlight-box.dark {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-left: none;
+            color: white;
+        }
+        .highlight-box.dark strong {
+            color: white;
         }
         .back-link {
             display: inline-flex;
@@ -45,283 +88,43 @@
         .back-link:hover {
             text-decoration: underline;
         }
-        
-        /* Event Card Styles */
-        .pm-demo {
+        .results-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        @media (max-width: 900px) {
-            .pm-demo {
-                grid-template-columns: 1fr;
-            }
-        }
-        .poly-card {
+        .result-card {
             background: white;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            border: 1px solid var(--border);
-        }
-        .poly-header {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .poly-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-alt);
+            padding: 2rem;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-        .poly-category {
-            font-size: 0.75rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .poly-title h3 {
-            font-size: 1.1rem;
-            margin-top: 0.25rem;
-            line-height: 1.4;
-        }
-        .poly-binary {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             text-align: center;
         }
-        .poly-prob-display {
-            margin-bottom: 1rem;
-        }
-        .poly-prob-pct {
-            font-size: 3rem;
+        .result-card .number {
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary);
         }
-        .poly-prob-label {
-            font-size: 1rem;
+        .result-card .label {
+            font-size: 0.9rem;
             color: var(--text-light);
-            margin-left: 0.25rem;
-        }
-        .poly-prob-bar {
-            height: 8px;
-            background: #e2e8f0;
-            border-radius: 4px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-        }
-        .poly-prob-fill {
-            height: 100%;
-            width: 60%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 4px;
-        }
-        .poly-binary-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .poly-yes-big, .poly-no-big {
-            padding: 1rem;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.25rem;
-            transition: transform 0.2s;
-            color: white;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-        }
-        .poly-yes-big:hover, .poly-no-big:hover {
-            transform: scale(1.02);
-        }
-        .poly-yes-big {
-            background: #059669;
-        }
-        .poly-no-big {
-            background: #dc2626;
-        }
-        .poly-yes-big strong, .poly-no-big strong {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        .poly-formula {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1rem;
-            color: var(--text);
-            flex-wrap: wrap;
-            background: var(--bg-alt);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-        .poly-f-yes { 
-            background: #059669;
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-        .poly-f-no { 
-            background: #dc2626;
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-        .poly-f-plus, .poly-f-eq {
-            font-weight: 600;
-            color: var(--text-light);
-        }
-        .poly-f-total { 
-            background: var(--text); 
-            color: white;
-            padding: 0.4rem 1rem; 
-            border-radius: 6px;
-            font-weight: 700;
-        }
-        .poly-footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-        
-        /* Explanation Cards */
-        .pm-explain {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-        .pm-explain-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-            border: 1px solid var(--border);
-        }
-        .pm-explain-card.highlight {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border: none;
-        }
-        .pm-explain-card.highlight h4 {
-            color: white;
-        }
-        .pm-explain-card.highlight p {
-            color: rgba(255,255,255,0.9);
-        }
-        .pm-explain-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-        }
-        .pm-explain-num {
-            width: 32px;
-            height: 32px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        .pm-explain-icon {
-            font-size: 1.5rem;
-        }
-        .pm-explain-header h4 {
-            font-size: 1.1rem;
-            margin: 0;
-        }
-        .pm-explain-card p {
-            margin: 0;
-            color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-        
-        /* Deep Dive Section */
-        .pm-section {
-            margin-bottom: 4rem;
-        }
-        .pm-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-        }
-        .pm-section p {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: var(--text-light);
-            margin-bottom: 1.25rem;
-        }
-        .pm-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .pm-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid var(--border);
-        }
-        .pm-card h4 {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
-        }
-        .pm-card p {
-            font-size: 1rem;
-            margin: 0;
-            line-height: 1.7;
         }
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
             margin: 2rem 0;
             font-size: 1rem;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
         .comparison-table th, .comparison-table td {
-            padding: 1.25rem 1.5rem;
+            padding: 1rem 1.25rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
         }
         .comparison-table th {
             background: var(--bg-alt);
             font-weight: 600;
-        }
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        .comparison-table tr:hover td {
-            background: rgba(102, 126, 234, 0.03);
+            color: var(--text);
         }
     </style>
 </head>
@@ -337,190 +140,124 @@
 
     <section class="project-hero">
         <div>
-            <h1>📈 Understanding Prediction Markets</h1>
+            <h1>📈 Prediction Markets</h1>
             <p class="subtitle">How peer-to-peer trading turns opinions into probabilities—and why I spent 3+ years building them</p>
+            <div class="project-meta">
+                <span class="meta-item">Probo & Vision 11</span>
+                <span class="meta-item">2021-2025</span>
+                <span class="meta-item">Product Owner</span>
+            </div>
         </div>
     </section>
 
-    <article class="pm-content">
+    <article class="project-content">
         <a href="index.html" class="back-link">← Back to Portfolio</a>
 
-        <!-- Interactive Demo -->
-        <div class="pm-demo">
-            <div class="poly-card">
-                <div class="poly-header">
-                    <div class="poly-icon">🤖</div>
-                    <div class="poly-title">
-                        <span class="poly-category">Tech • AI</span>
-                        <h3>Will Google have the best AI model by end of February?</h3>
-                    </div>
-                </div>
-                <div class="poly-binary">
-                    <div class="poly-prob-display">
-                        <span class="poly-prob-pct">60%</span>
-                        <span class="poly-prob-label">chance</span>
-                    </div>
-                    <div class="poly-prob-bar">
-                        <div class="poly-prob-fill"></div>
-                    </div>
-                    <div class="poly-binary-buttons">
-                        <button class="poly-yes-big">
-                            <span>Buy Yes</span>
-                            <strong>₹6</strong>
-                        </button>
-                        <button class="poly-no-big">
-                            <span>Buy No</span>
-                            <strong>₹4</strong>
-                        </button>
-                    </div>
-                    <div class="poly-formula">
-                        <span class="poly-f-yes">YES ₹6</span>
-                        <span class="poly-f-plus">+</span>
-                        <span class="poly-f-no">NO ₹4</span>
-                        <span class="poly-f-eq">=</span>
-                        <span class="poly-f-total">₹10 Contract</span>
-                    </div>
-                </div>
-                <div class="poly-footer">
-                    <span>$2M Vol.</span>
-                    <span>Ends Feb 28</span>
-                </div>
-            </div>
+        <h2>What Are Prediction Markets?</h2>
+        <p>
+            Prediction markets let you trade on the outcomes of future events. Instead of betting against 
+            a bookmaker, you trade directly with other people. The price of a contract reflects the 
+            crowd's probability estimate for that outcome.
+        </p>
 
-            <div class="pm-explain">
-                <div class="pm-explain-card">
-                    <div class="pm-explain-header">
-                        <span class="pm-explain-num">1</span>
-                        <h4>₹10 Contract</h4>
-                    </div>
-                    <p>Each contract settles at ₹10. Buy YES at ₹6 → If Google wins, you get ₹10 (profit ₹4). If not, you lose ₹6.</p>
-                </div>
-                <div class="pm-explain-card">
-                    <div class="pm-explain-header">
-                        <span class="pm-explain-num">2</span>
-                        <h4>Peer-to-Peer</h4>
-                    </div>
-                    <p>Your YES ₹6 matches someone's NO ₹4. No bookmaker—traders trade against each other. Platform just matches orders.</p>
-                </div>
-                <div class="pm-explain-card">
-                    <div class="pm-explain-header">
-                        <span class="pm-explain-num">3</span>
-                        <h4>Exit Anytime</h4>
-                    </div>
-                    <p>Bought at ₹6, price rises to ₹8? Sell and lock in ₹2 profit—no need to wait for the event!</p>
-                </div>
-                <div class="pm-explain-card highlight">
-                    <div class="pm-explain-header">
-                        <span class="pm-explain-icon">💡</span>
-                        <h4>Price = Probability</h4>
-                    </div>
-                    <p>₹6 price means 60% implied probability. Prices update in real-time as traders react to new information.</p>
-                </div>
+        <div class="highlight-box">
+            <strong>Example:</strong> "Will Google have the best AI model by February?" trades at ₹6. 
+            That means the market thinks there's a 60% chance. Buy YES at ₹6 → if it happens, you get ₹10 
+            (profit ₹4). If not, you lose your ₹6.
+        </div>
+
+        <h2>How It Works</h2>
+        <ul>
+            <li><strong>₹10 Contract:</strong> Every contract settles at ₹10 if true, ₹0 if false</li>
+            <li><strong>Peer-to-Peer:</strong> Your YES ₹6 matches someone's NO ₹4 — no bookmaker takes a cut</li>
+            <li><strong>Exit Anytime:</strong> Price rises to ₹8? Sell and lock in ₹2 profit without waiting</li>
+            <li><strong>Price = Probability:</strong> ₹6 price means 60% implied probability</li>
+        </ul>
+
+        <div class="highlight-box dark">
+            <strong>💡 Key Insight:</strong> Prices update in real-time as traders react to news. 
+            The market aggregates collective intelligence into a single number.
+        </div>
+
+        <h2>Why They Matter</h2>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="number">🎯</div>
+                <div class="label">More Accurate Than Polls</div>
+            </div>
+            <div class="result-card">
+                <div class="number">⚡</div>
+                <div class="label">Real-Time Updates</div>
+            </div>
+            <div class="result-card">
+                <div class="number">💰</div>
+                <div class="label">Skin in the Game</div>
             </div>
         </div>
+        <p>
+            Studies show prediction markets outperform polls and expert forecasts. Why? Traders have 
+            money on the line—they're incentivized to be right, not just sound right. Bad predictions 
+            cost money, which filters out noise and rewards genuine insight.
+        </p>
 
-        <!-- Deep Dive -->
-        <div class="pm-section">
-            <h2>Why Prediction Markets Matter</h2>
-            <p>
-                Prediction markets aggregate dispersed information into a single number—the price. Unlike polls or expert opinions, 
-                traders have "skin in the game." They're incentivized to be right, not just sound right.
-            </p>
-            <div class="pm-grid">
-                <div class="pm-card">
-                    <h4>🎯 Accuracy</h4>
-                    <p>Studies show prediction markets outperform polls and expert forecasts in elections, sports, and business outcomes.</p>
-                </div>
-                <div class="pm-card">
-                    <h4>⚡ Real-Time</h4>
-                    <p>Prices update instantly as news breaks. No waiting for the next poll or analyst report.</p>
-                </div>
-                <div class="pm-card">
-                    <h4>💰 Incentive-Aligned</h4>
-                    <p>Bad predictions cost money. This filters out noise and rewards genuine insight.</p>
-                </div>
-            </div>
-        </div>
+        <h2>PM vs Traditional Betting</h2>
+        <table class="comparison-table">
+            <tr>
+                <th>Aspect</th>
+                <th>Sports Betting</th>
+                <th>Prediction Markets</th>
+            </tr>
+            <tr>
+                <td>Counterparty</td>
+                <td>Bookmaker (house)</td>
+                <td>Other traders (P2P)</td>
+            </tr>
+            <tr>
+                <td>Pricing</td>
+                <td>Bookmaker sets odds</td>
+                <td>Market-driven</td>
+            </tr>
+            <tr>
+                <td>Exit</td>
+                <td>Usually can't sell back</td>
+                <td>Trade anytime</td>
+            </tr>
+            <tr>
+                <td>House Edge</td>
+                <td>5-15% built into odds</td>
+                <td>Small fee only</td>
+            </tr>
+            <tr>
+                <td>Topics</td>
+                <td>Sports, casino</td>
+                <td>Anything: politics, tech, economics</td>
+            </tr>
+        </table>
 
-        <div class="pm-section">
-            <h2>How It Differs From Sports Betting</h2>
-            <table class="comparison-table">
-                <tr>
-                    <th>Aspect</th>
-                    <th>Traditional Betting</th>
-                    <th>Prediction Markets</th>
-                </tr>
-                <tr>
-                    <td>Counterparty</td>
-                    <td>Bookmaker (house)</td>
-                    <td>Other traders (P2P)</td>
-                </tr>
-                <tr>
-                    <td>Pricing</td>
-                    <td>Bookmaker sets odds</td>
-                    <td>Market-driven prices</td>
-                </tr>
-                <tr>
-                    <td>Exit</td>
-                    <td>Usually can't sell back</td>
-                    <td>Trade anytime before event</td>
-                </tr>
-                <tr>
-                    <td>House Edge</td>
-                    <td>5-15% built into odds</td>
-                    <td>Small trading fee only</td>
-                </tr>
-                <tr>
-                    <td>Topics</td>
-                    <td>Sports, casino games</td>
-                    <td>Anything: politics, tech, economics</td>
-                </tr>
-            </table>
-        </div>
+        <h2>What I Built</h2>
+        <p>
+            At <strong>Probo</strong>, I spent 3+ years building prediction market products:
+        </p>
+        <ul>
+            <li><strong>₹.Ai (Rai):</strong> Social P2P betting with friends on custom events</li>
+            <li><strong>Clubs:</strong> Event sharing platform — 50K visitors, 10K traders</li>
+            <li><strong>Fantasy Arena:</strong> Multi-question pools with multipliers</li>
+            <li><strong>Creators:</strong> User-generated events platform</li>
+        </ul>
+        <p>
+            At <strong>Vision 11</strong>, I set up liquidity desk operations and integrated 
+            live data feeds (Binance, TradingView) for crypto prediction markets.
+        </p>
 
-        <div class="pm-section">
-            <h2>My Experience Building Them</h2>
-            <p>
-                At <strong>Probo</strong>, I spent 3+ years building prediction market products—from core trading mechanics to social features. 
-                Key projects included:
-            </p>
-            <div class="pm-grid">
-                <div class="pm-card">
-                    <h4>🎲 ₹.Ai (Rai)</h4>
-                    <p>Social P2P betting with friends on custom events. AI-powered event creation and auto-resolution.</p>
-                </div>
-                <div class="pm-card">
-                    <h4>🏛️ Clubs</h4>
-                    <p>Event sharing platform with public/private groups. 50K visitors, 10K active traders.</p>
-                </div>
-                <div class="pm-card">
-                    <h4>🏆 Fantasy Arena</h4>
-                    <p>Multi-question pools with multipliers. Predict 3/4 to win—combining prediction with fantasy sports mechanics.</p>
-                </div>
-                <div class="pm-card">
-                    <h4>✨ Creators</h4>
-                    <p>User-generated events platform. Diversified content beyond ops-created events.</p>
-                </div>
-            </div>
-            <p style="margin-top: 1.5rem;">
-                At <strong>Vision 11</strong>, I set up liquidity desk operations for low-volume sports and integrated live data feeds (Binance, TradingView) for crypto prediction markets.
-            </p>
-        </div>
+        <h2>The Future</h2>
+        <ul>
+            <li><strong>Corporate forecasting:</strong> Companies using internal PMs for decisions</li>
+            <li><strong>News dashboards:</strong> Real-time probability for elections, geopolitics</li>
+            <li><strong>DeFi integration:</strong> Blockchain-based markets with transparent settlement</li>
+            <li><strong>AI forecasting:</strong> LLMs as market participants at scale</li>
+        </ul>
 
-        <div class="pm-section">
-            <h2>The Future</h2>
-            <p>
-                Prediction markets are still early. Regulatory clarity is improving globally, and we're seeing growth in:
-            </p>
-            <ul style="font-size: 1.1rem; line-height: 2; color: var(--text-light); padding-left: 1.5rem;">
-                <li><strong>Corporate forecasting</strong> — companies using internal PMs for project timelines and decisions</li>
-                <li><strong>News & information</strong> — real-time probability dashboards for elections, geopolitics</li>
-                <li><strong>DeFi integration</strong> — blockchain-based markets with transparent settlement</li>
-                <li><strong>AI forecasting</strong> — LLMs as market participants, aggregating information at scale</li>
-            </ul>
-        </div>
-
-        <a href="index.html#work" class="back-link" style="margin-top: 2rem;">← Back to Portfolio</a>
+        <a href="index.html#work" class="btn btn-primary" style="margin-top: 2rem;">View My Work</a>
     </article>
 
     <footer class="footer">
