@@ -185,26 +185,28 @@
         .pm-explain {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.25rem;
         }
         .pm-explain-card {
-            background: var(--bg-alt);
+            background: white;
             border-radius: 12px;
-            padding: 1.25rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
         }
         .pm-explain-card.highlight {
-            background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
-            border: 1px solid rgba(102,126,234,0.3);
+            background: linear-gradient(135deg, rgba(102,126,234,0.08), rgba(118,75,162,0.08));
+            border: 1px solid rgba(102,126,234,0.25);
         }
         .pm-explain-header {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         .pm-explain-num {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
@@ -212,66 +214,74 @@
             align-items: center;
             justify-content: center;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
         .pm-explain-icon {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
         }
         .pm-explain-header h4 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin: 0;
         }
         .pm-explain-card p {
             margin: 0;
             color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.7;
         }
         
         /* Deep Dive Section */
         .pm-section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
         .pm-section h2 {
-            font-size: 1.75rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             color: var(--text);
         }
         .pm-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
             color: var(--text-light);
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
         .pm-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
+            gap: 2rem;
+            margin: 2rem 0;
         }
         .pm-card {
-            background: var(--bg-alt);
-            padding: 1.5rem;
-            border-radius: 12px;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
         }
         .pm-card h4 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 1.1rem;
         }
         .pm-card p {
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin: 0;
+            line-height: 1.7;
         }
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.95rem;
+            margin: 2rem 0;
+            font-size: 1rem;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
         .comparison-table th, .comparison-table td {
-            padding: 1rem;
+            padding: 1.25rem 1.5rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
         }
@@ -279,8 +289,11 @@
             background: var(--bg-alt);
             font-weight: 600;
         }
-        .comparison-table tr:hover {
-            background: var(--bg-alt);
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table tr:hover td {
+            background: rgba(102, 126, 234, 0.03);
         }
     </style>
 </head>
