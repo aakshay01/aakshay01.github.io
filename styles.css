@@ -189,9 +189,10 @@ a {
 /* Analytics Widget - Terminal Style */
 .hero-visual {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 2rem;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    padding-top: 1rem;
 }
 
 .analytics-widget {
@@ -1685,10 +1686,10 @@ section {
     display: block;
     background: white;
     border-radius: 12px;
-    padding: 1rem;
+    padding: 1.25rem;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     border: 1px solid var(--border);
-    margin-bottom: 1rem;
+    min-width: 260px;
     transition: transform 0.2s, box-shadow 0.2s;
     text-decoration: none;
     color: inherit;
@@ -1701,12 +1702,12 @@ section {
     display: flex;
     gap: 0.75rem;
     align-items: flex-start;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 .poly-icon-mini {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     background: var(--bg-alt);
-    padding: 0.4rem;
+    padding: 0.5rem;
     border-radius: 8px;
 }
 .poly-cat-mini {
@@ -1717,58 +1718,68 @@ section {
     display: block;
 }
 .poly-q-mini {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.3;
     display: block;
-    margin-top: 0.15rem;
+    margin-top: 0.2rem;
 }
 .poly-body-mini {
     text-align: center;
 }
 .poly-prob-mini {
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 700;
     color: var(--primary);
+    line-height: 1;
+}
+.poly-prob-mini::after {
+    content: ' chance';
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-light);
 }
 .poly-bar-mini {
-    height: 4px;
+    height: 6px;
     background: #e2e8f0;
-    border-radius: 2px;
-    margin: 0.5rem 0;
+    border-radius: 3px;
+    margin: 0.75rem 0;
     overflow: hidden;
 }
 .poly-fill-mini {
     height: 100%;
     width: 60%;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 3px;
 }
 .poly-btns-mini {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.75rem;
     justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
 }
 .poly-yes-mini, .poly-no-mini {
-    padding: 0.3rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 .poly-yes-mini {
-    background: rgba(16, 185, 129, 0.1);
-    color: #059669;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
 }
 .poly-no-mini {
-    background: rgba(239, 68, 68, 0.1);
-    color: #dc2626;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
 }
 .poly-learn-mini {
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--primary);
-    margin-top: 0.75rem;
+    margin-top: 1rem;
     font-weight: 500;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {
